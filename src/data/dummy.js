@@ -898,9 +898,9 @@ export const ordersGrid = [
     width: '150',
   },
   {
+    field: 'Status',
     headerText: 'Status',
     template: gridOrderStatus,
-    field: 'OrderItems',
     textAlign: 'Center',
     width: '120',
   },
