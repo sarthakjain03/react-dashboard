@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { FiSettings } from "react-icons/fi";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
@@ -29,7 +29,7 @@ const App = () => {
             </TooltipComponent>
           </div>
           {activeMenu ? (
-            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white">
+            <div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white z-10">
               <Sidebar />
             </div>
           ) : (
@@ -74,6 +74,9 @@ const App = () => {
               <Route path="/stacked" element={<Stacked />} />
 
             </Routes>
+          </div>
+          <div>
+            <Footer />
           </div>
           </div>
         </div>
