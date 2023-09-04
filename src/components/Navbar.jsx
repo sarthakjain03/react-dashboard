@@ -20,7 +20,7 @@ const NavButton = ({title, customFunc, icon, color, dotColor}) => (
 )
 
 const Navbar = () => {
-  const { activeMenu, setActiveMenu, isClicked, setIsClicked, handleClick, screenSize, setScreenSize, currentColor } = useStateContext()
+  const { activeMenu, setActiveMenu, isClicked, handleClick, screenSize, setScreenSize, currentColor } = useStateContext()
 
   useEffect(() => {
     const handleResize = () => setScreenSize(window.innerWidth)
@@ -41,9 +41,11 @@ const Navbar = () => {
     }
   }, [screenSize])
 
+  const handleActiveMenu = () => setActiveMenu(!activeMenu);
+
   return (
     <div className='flex justify-between p-2 md:mx-6 relative'>
-      <NavButton title="Menu" customFunc={() => setActiveMenu((prevActiveMenu) => !prevActiveMenu)} color={currentColor} icon={<AiOutlineMenu />} />
+      <NavButton title="Menu" customFunc={handleActiveMenu} color={currentColor} icon={<AiOutlineMenu />} />
 
       <div className='flex'>
         <NavButton 
@@ -84,10 +86,10 @@ const Navbar = () => {
           </div>
         </TooltipComponent>
 
-        {isClicked.chat && <Chat />}
-        {isClicked.cart && <Cart />}
-        {isClicked.notification && <Notification />}
-        {isClicked.userProfile && <UserProfile />}
+        {isClicked.chat && (<Chat />)}
+        {isClicked.cart && (<Cart />)}
+        {isClicked.notification && (<Notification />)}
+        {isClicked.userProfile && (<UserProfile />)}
       </div>
     </div>
   )
