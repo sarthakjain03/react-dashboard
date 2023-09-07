@@ -24,7 +24,7 @@ const Sidebar = () => {
       {activeMenu && (<>
         <div className='flex justify-between items-center'>
           <Link to="/" onClick={handleCloseSidebar} className='items-center gap-3 mt-4 ml-3 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900'>
-            <SiShopware /> <span>Dasshy</span>
+            <SiShopware /> <span>Dashview</span>
           </Link>
           <TooltipComponent content='Menu' position='BottomCenter'> 
             <button type='button'
